@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tasty places in ZP</title>
+ 	<link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<div class="menu">
+ 		<div class="menu-header">
+ 			<button type="button" class="toggle-button button-collapsed" data-bind="click: toggleButton">
+				<span class="toggle-button__icon-bar icon-bar--open icon-bar--open-1"></span>
+				<span class="toggle-button__icon-bar icon-bar--open icon-bar--open-2"></span>
+				<span class="toggle-button__icon-bar icon-bar--open icon-bar--open-3"></span>
+				<span class="toggle-button__icon-bar icon-bar--close icon-bar--close-1"></span>
+				<span class="toggle-button__icon-bar icon-bar--close icon-bar--close-2"></span>
+ 			</button>
+ 			<h3>Tasty places in Zaporizhzhya</h3>
+ 		</div>
+        <div class="menu-container">
+          	<input id="places-search" type="text" placeholder="Filter" 
+          		data-bind="textInput: filter, valueUpdate: 'afterkeydown'">
+            <ul class="locations" data-bind="foreach: locationList">
+            	<li data-bind="text: title, click: show"></li>
+            </ul>
+        </div>
+ 	</div>
+ 	<div class="body">
+ 		<div id="map"></div>
+ 	</div>
+	<script src="js/knockout-3.4.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+	<script async defer
+   		src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBP4ggHsGgulcRg8k6VlnJ8iWG1OVLnyl0&callback=initApp">
+	</script>
+</body>
+</html>

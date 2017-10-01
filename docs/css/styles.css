@@ -1,0 +1,178 @@
+html, 
+body { 
+     height: 100%; 
+     margin: 0; 
+     padding: 0; 
+}
+.body { 
+     height: 100%;
+     margin-left: 300px;
+}
+#map {
+     height: 100%;
+}
+.menu {
+     position: fixed; 
+     width: 300px;
+     height: 100%;
+}
+.menu-container {
+     box-sizing: border-box;
+     background: #fff;
+     /*border: 1px solid #999;
+     border-radius: 3px;*/
+     height: 100%;
+     line-height: 35px;
+     padding: 10px 20px 30px 20px;
+     text-align: left;
+}
+.menu-open {
+     animation: menu-slide-in 200ms forwards !important;
+}
+.body-slide-in {
+     animation: body-slide-in 200ms forwards !important;
+}
+@keyframes menu-slide-in {
+     0% {
+          left: -200px;
+     }
+     100% {
+          left: 0;
+     }
+}
+@keyframes menu-slide-out {
+     0% {
+          left: 0;
+     }
+     100% {
+          left: -200px;
+     }
+}
+@keyframes body-slide-in {
+     0% {
+          left: 0;
+     }
+     100% {
+          left: 200px;
+     }
+}
+@keyframes body-slide-out {
+     0% {
+          left: 200px;
+     }
+     100% {
+          left: 0;
+     }
+}
+#places-search {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #000;
+     border-radius: 3px;
+     outline: 0;
+}
+.locations {
+     padding-left: 0;
+}
+.toggle-button {
+     display: block;
+     position: fixed;
+     width: 50px;
+     height: 50px;
+     background-color: #fff;
+     background-image: none;
+     top: 0;
+     left: 0;
+     z-index: 999;
+     border: 0;
+     outline: 0;
+}
+.toggle-button__icon-bar {
+     display: block;
+     width: 22px;
+     height: 2px;
+     border-radius: 1px;
+     background-color: #000;
+     position: absolute;
+     margin: 0;
+     left: 14px;
+     transition: all .25s ease-out;
+}
+.icon-bar--open {
+     opacity: 0;
+}
+.icon-bar--open-1 {
+     top: 18px;
+}
+.icon-bar--open-3 {
+     bottom: 16px;
+}
+.icon-bar--close {
+     opacity: 1;
+     will-change: transform;
+}
+.icon-bar--close-1 {
+     transform: rotate(45deg);
+}
+.icon-bar--close-2 {
+     transform: rotate(-45deg);
+}
+.button-collapsed .icon-bar--close {
+     opacity: 0;
+}
+.button-collapsed .icon-bar--open {
+     opacity: 1;
+}
+.button-collapsed .icon-bar--close-1,
+.button-collapsed .icon-bar--close-2 {
+     transform: rotate(0);
+}
+h3 {
+     text-transform: uppercase;
+     padding: 0 20px;
+}
+li {
+     list-style-type: none;
+}
+li:hover {
+     cursor: pointer;
+     text-decoration: underline;
+}
+.toggle-button {
+     display: none;
+}
+@media (max-width: 768px) {
+     h3 {
+          padding-left: 60px;
+          margin-top: 15px;
+          margin-bottom: 0;
+     }
+     .menu {
+          position: relative;
+          width: 100%;
+          height: 0;
+     }
+     .menu-header {
+          position: fixed;
+          z-index: 3;
+          min-height: 50px;
+          background-color: #ffffff;
+          width: 100%;
+     }
+     .menu-container {
+          position: fixed;
+          width: 200px;
+          top: 59px;
+          z-index: 1;
+          animation: menu-slide-out 200ms forwards;
+     }
+     .body {
+          position: relative;
+          margin-left: 0; 
+          padding-top: 50px;
+          animation: body-slide-out 200ms forwards;
+     }
+     .toggle-button {
+          display: block;
+     }
+}
