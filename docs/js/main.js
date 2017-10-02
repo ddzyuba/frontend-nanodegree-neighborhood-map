@@ -68,7 +68,7 @@ var locationMarker = function( location ) {
     this.show = function( location ) {
         google.maps.event.trigger( self.marker, 'click' );
     };
-}
+};
 
 /* This function populates the infowindow when the marker is clicked. We'll only allow one infowindow which will open at the marker that is cliecked, and populate based on that markers position.*/
 function populateInfoWindow( marker, infowindow, location ) {
@@ -78,9 +78,9 @@ function populateInfoWindow( marker, infowindow, location ) {
         
     $.getJSON( foursquareURL )
         .done( function( data ) {
-            var url = ( data.response.venues[0].url != undefined ) ? '<div><a href="' + data.response.venues[0].url + '" target ="_blank">' + data.response.venues[0].url + '</a></div>' : '';
-            var address = ( data.response.venues[0].location.address != undefined ) ? '<div>' + data.response.venues[0].location.address + '</div>' : '';
-            var phone = ( data.response.venues[0].contact.phone != undefined ) ? '<div>' + data.response.venues[0].contact.phone + '</div>' : '';
+            var url = ( typeof data.response.venues[0].url !== 'undefined' ) ? '<div><a href="' + data.response.venues[0].url + '" target ="_blank">' + data.response.venues[0].url + '</a></div>' : '';
+            var address = ( typeof data.response.venues[0].location.address !== 'undefined' ) ? '<div>' + data.response.venues[0].location.address + '</div>' : '';
+            var phone = ( typeof data.response.venues[0].contact.phone !== 'undefined' ) ? '<div>' + data.response.venues[0].contact.phone + '</div>' : '';
             
             var message = address + phone + url;
             openInfowindow( marker, infowindow, message );
