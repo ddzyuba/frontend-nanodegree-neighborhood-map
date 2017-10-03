@@ -8,7 +8,8 @@
 <body>
 	<div class="menu">
  		<div class="menu-header">
- 			<button type="button" class="toggle-button button-collapsed" data-bind="click: toggleButton">
+ 			<button type="button" class="toggle-button" 
+ 				data-bind="click: toggleButton, css: { 'button-collapsed': buttonCollapsed }">
 				<span class="toggle-button__icon-bar icon-bar--open icon-bar--open-1"></span>
 				<span class="toggle-button__icon-bar icon-bar--open icon-bar--open-2"></span>
 				<span class="toggle-button__icon-bar icon-bar--open icon-bar--open-3"></span>
@@ -17,7 +18,7 @@
  			</button>
  			<h3>Tasty places in Zaporizhzhya</h3>
  		</div>
-        <div class="menu-container">
+        <div class="menu-container" data-bind="css: { 'menu-open': menuOpen }">
           	<input id="places-search" type="text" placeholder="Filter" 
           		data-bind="textInput: filter, valueUpdate: 'afterkeydown'">
             <ul class="locations" data-bind="foreach: locationList">
@@ -25,7 +26,7 @@
             </ul>
         </div>
  	</div>
- 	<div class="body">
+ 	<div class="body" data-bind="css: { 'body-slide-in': bodySlideIn }">
  		<div id="map"></div>
  	</div>
 	<script src="js/knockout-3.4.2.js"></script>

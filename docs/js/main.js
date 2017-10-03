@@ -92,6 +92,12 @@ function AppViewModel() {
 
     this.mapList = ko.observableArray( [] );
 
+    this.buttonCollapsed = ko.observable( true );
+
+    this.menuOpen = ko.observable( false );
+    
+    this.bodySlideIn = ko.observable( false );
+
     map = new google.maps.Map( document.getElementById( 'map' ), {
         center: { lat: 47.8388, lng: 35.139567 },
         zoom: 13
@@ -126,9 +132,9 @@ function AppViewModel() {
     }, self );
 
     self.toggleButton = function() {
-        $( '.toggle-button' ).toggleClass( 'button-collapsed' );
-        $( '.menu-container' ).toggleClass( 'menu-open' );
-        $( '.body' ).toggleClass( 'body-slide-in' );
+        this.buttonCollapsed( ! this.buttonCollapsed() );
+        this.menuOpen( ! this.menuOpen() );
+        this.bodySlideIn( ! this.bodySlideIn() );
     };
 }
 
