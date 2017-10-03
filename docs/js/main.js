@@ -139,7 +139,7 @@ function AppViewModel() {
 }
 
 function mapError() {
-    var errorMessage = '<h3>Google Maps error occured, please check out the application later.</h3>'
+    var errorMessage = '<h3>Google Maps error occured, please check out the application later.</h3>';
     var map = $( '#map' ).hide();
     var menu = $( '.menu' ).hide();
     var main = $( '.body' ).css( 'margin-left', '0' ).append( errorMessage );
