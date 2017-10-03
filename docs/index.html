@@ -19,17 +19,17 @@
  			</button>
  			<h3>Tasty places in Zaporizhzhya</h3>
  		</div>
-        <div class="menu-container" data-bind="css: { 'menu-open': menuOpen }">
+        <nav class="menu-container" data-bind="css: { 'menu-open': menuOpen }">
           	<input id="places-search" type="text" placeholder="Filter" 
           		data-bind="textInput: filter, valueUpdate: 'afterkeydown'">
             <ul class="locations" data-bind="foreach: locationList">
             	<li data-bind="text: title, click: show"></li>
             </ul>
-        </div>
+        </nav>
  	</div>
- 	<div class="body" data-bind="css: { 'body-slide-in': bodySlideIn }">
+ 	<main class="body" data-bind="css: { 'body-slide-in': bodySlideIn }">
  		<div id="map"></div>
- 	</div>
+ 	</main>
 	<script src="js/knockout-3.4.2.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/locations.js"></script>
