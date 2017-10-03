@@ -1,6 +1,6 @@
 var map, largeInfowindow, bounds;
 
-var locationMarker = function( location ) {
+var LocationMarker = function( location ) {
     var self = this;
 
     this.title = location.title;
@@ -102,7 +102,7 @@ function AppViewModel() {
 
     // add location markers for each location
     locations.forEach( function( location ) {
-        self.mapList.push( new locationMarker( location) );
+        self.mapList.push( new LocationMarker( location) );
     } );
 
     this.locationList = ko.computed( function() {
